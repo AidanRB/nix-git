@@ -1,6 +1,6 @@
-let nixpkgs = import <nixpkgs> {}; in
-{
-  environment.systemPackages = [
-    nixpkgs.nmap
+{ pkgs ? import <nixpkgs> {} }:
+pkgs.mkShell {
+  buildInputs = [
+    pkgs.nmap
   ];
 }

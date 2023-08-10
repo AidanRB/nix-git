@@ -3,7 +3,7 @@
 let
   git_src = builtins.fetchGit {
     url = "https://github.com/AidanRB/nix-git";
-    rev = "cd1bf4ab89c8b99ce6e4e8c699b0b0bf977a68ad";
+    rev = "46994657cffbde2e6a0fbb1054090b4c7ea33123";
   }; in
   # imported = import (git_src + "/imported.nix");
   # imported = import ./imported.nix;

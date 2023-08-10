@@ -1,0 +1,5 @@
+{
+  buildInputs = [
+  	nmap
+  ];
+}

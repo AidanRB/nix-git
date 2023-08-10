@@ -1,12 +1,15 @@
 { pkgs ? import <nixpkgs> {} }:
-  pkgs.mkShell {
-    nativeBuildInputs = with pkgs.buildPackages; [ ruby_3_2 ];
 
-  git_src = builtins.fetchGit {
-  	url = "https://github.com/AidanRB/nix-git";
-  };
+  let git_src = builtins.fetchGit {
+    url = "https://github.com/AidanRB/nix-git";
+  }; in
+  (import (git_src + "/imported.nix") {})
 
-  imports = [
-  	(git_src + "imported.nix")
-  ];
-}
+  # pkgs.mkShell {
+
+
+  # imports = [
+  # 	# (git_src + "imported.nix")
+  #   ./imported.nix
+  # ];
+# }

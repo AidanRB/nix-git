@@ -1,5 +1,6 @@
+let nixpkgs = import <nixpkgs> {}; in
 {
-  buildInputs = [
-  	nmap
+  environment.systemPackages = [
+    nixpkgs.nmap
   ];
 }
